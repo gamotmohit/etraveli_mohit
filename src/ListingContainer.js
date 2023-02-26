@@ -20,9 +20,10 @@ function ListingContainer(props) {
         } else if (fetchMovieInStages === 2) {
             return <div className="col-6 border-end mt-4">Unable to fetch data from server.</div>
         } else if (fetchMovieInStages === 1) {
+            console.log("VALUE :::::: ",searchInputChar && searchInputChar.length > 0 && movieList === 0)
             return <div className="col-6 border-end">
                 {
-                    searchInputChar && searchInputChar.length > 0 && movieList === 0
+                    (searchInputChar && searchInputChar.length > 0 && movieList.length === 0)
                         ?
                         <div className="mt-4 text-center">Unable to search movie name as <b>{searchInputChar}</b></div>
                         :
