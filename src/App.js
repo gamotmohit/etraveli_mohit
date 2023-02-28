@@ -9,8 +9,28 @@ function App() {
   const [movieListDetailsId, setMovieListDetails] = useState("");
   const [movieListFilterType, setMovieListFilter] = useState("");
   const [fetchMovieInStages, setFetchMovieInStages] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true);
+        setSearch("");
+        setMovieListDetails("");
+      } else {
+        setIsMobile(false);
+      }
+    }
+
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+    }
+  }, []);
+
+
 
   useEffect(() => {
     function fetchApi() {
@@ -24,6 +44,11 @@ function App() {
     }
     fetchApi();
   }, []);
+
+  function onMobileViewBackButton() {
+    setSearch("");
+    setMovieListDetails("");
+  }
 
   function handleSortList(type) {
     setMovieListFilter(type);
@@ -68,10 +93,12 @@ function App() {
     return movieListFilter.episode_id === movieListDetailsId;
   })
 
+
+
   return (
     <>
-      <Header handleChange={handleChange} handleSortList={handleSortList}></Header>
-      <ListingContainer movieList={renderMovieListFilter} handleOpenDetails={handleOpenDetails} renderMovieDetailsObj={renderMovieDetailsObj} searchListByInput={searchListByInput} fetchMovieInStages={fetchMovieInStages}></ListingContainer>
+      <Header handleChange={handleChange} handleSortList={handleSortList} onMobileViewBackButton={onMobileViewBackButton} movieListDetailsId={movieListDetailsId} isMobile={isMobile}></Header>
+      <ListingContainer movieList={renderMovieListFilter} handleOpenDetails={handleOpenDetails} renderMovieDetailsObj={renderMovieDetailsObj} searchListByInput={searchListByInput} fetchMovieInStages={fetchMovieInStages} movieListDetailsId={movieListDetailsId} isMobile={isMobile}></ListingContainer>
     </>
   );
 }

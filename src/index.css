@@ -13,13 +13,14 @@ code {
 }
 
 
-.flex_box_center{
+.flex_box_center {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
-.pointer{
+.pointer {
   cursor: pointer;
 }
 
@@ -27,19 +28,19 @@ code {
   box-shadow: 0 0 0 0.05rem rgb(13 110 253 / 25%);
 }
 
-.table_font_size{
+.table_font_size {
   font-size: 13px;
 }
 
-.font-13{
+.font-13 {
   font-size: 13px;
 }
 
-.font-movie-title{
+.font-movie-title {
   font-size: 1.4rem;
 }
 
-.sort-button{
+.sort-button {
   background-color: #f5f5f5;
   color: #333;
   border-color: #cfcfcf;
@@ -47,7 +48,7 @@ code {
   font-weight: 500;
 }
 
-.sort-button:hover{
+.sort-button:hover {
   background-color: #e5e5e5;
   color: #333;
   border-color: #cfcfcf;
@@ -55,7 +56,13 @@ code {
   font-weight: 500;
 }
 
-.sort-button:active, .sort-button:focus, .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+.sort-button:active,
+.sort-button:focus,
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
   background-color: #e5e5e5;
   color: #333;
   border-color: #cfcfcf;
@@ -63,20 +70,36 @@ code {
   font-weight: 500;
 }
 
-.border-bootom-1{
+.border-bootom-1 {
   border-bottom: 1px solid #ccc;
 }
 
-.sort-button-list li{
+.sort-button-list li {
   font-size: 12px;
   font-weight: 500;
 }
 
-.sort-button-list .dropdown-item.active, .sort-button-list .dropdown-item:active{
+.sort-button-list .dropdown-item.active,
+.sort-button-list .dropdown-item:active {
   background-color: #999;
 }
 
-.displaymovie .active{
+.back_Button{
+  padding-top: 7.8px;
+  padding-bottom: 7.8px;
+}
+
+.displaymovie .active {
   background-color: #eee;
 }
 
+@media (max-width: 576px) {
+  .d-sm-none {
+    display: none !important;
+  }
+}
+
+
+.d-block_imp {
+  display: block!important;
+}

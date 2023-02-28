@@ -8,20 +8,23 @@ function ListingContainer(props) {
     const handleOpenDetails = props.handleOpenDetails;
     const renderMovieDetailsObj = props.renderMovieDetailsObj;
     const fetchMovieInStages = props.fetchMovieInStages;
+    const movieListDetailsId = props.movieListDetailsId;
+    const isMobile = props.isMobile;
+
+    const left_panel_hide = (isMobile && movieListDetailsId)?"col-sm border-end d-none":"col-sm border-end";
+    const right_panel_hide = (isMobile && movieListDetailsId)?"col-sm d-xs-none d-sm-none d-md-block d-block_imp":"col-sm d-xs-none d-sm-none d-md-block"; 
+
 
     const selectedMovieId = (renderMovieDetailsObj && renderMovieDetailsObj.episode_id?renderMovieDetailsObj.episode_id:0);
 
-    console.log("fetchMovieInStages :::",fetchMovieInStages);
-
     function renderLeftSidePanelHTML(){
-        console.log("fetchMovieInStages :::",fetchMovieInStages)
+        //console.log("fetchMovieInStages :::",fetchMovieInStages);
         if (fetchMovieInStages === 0) {
-            return <div className="col-6 border-end mt-4">Fetching data from server....</div>
+            return <div className={`${left_panel_hide}`.trim()}><div className="flex_box_center">Fetching data from server....</div></div>
         } else if (fetchMovieInStages === 2) {
-            return <div className="col-6 border-end mt-4">Unable to fetch data from server.</div>
+            return <div className={`${left_panel_hide}`.trim()}><div className="flex_box_center">Unable to fetch data from server.</div></div>
         } else if (fetchMovieInStages === 1) {
-            console.log("VALUE :::::: ",searchInputChar && searchInputChar.length > 0 && movieList === 0)
-            return <div className="col-6 border-end">
+            return <div className={`${left_panel_hide}`.trim()}>
                 {
                     (searchInputChar && searchInputChar.length > 0 && movieList.length === 0)
                         ?
@@ -41,11 +44,11 @@ function ListingContainer(props) {
                 {renderLeftSidePanel}
                 {
                     renderMovieDetailsObj && renderMovieDetailsObj.episode_id ?
-                        <div className="col-6">
+                        <div className={`${right_panel_hide}`.trim()}>
                             <MovieDetailsBlock renderMovieDetailsObj={renderMovieDetailsObj}></MovieDetailsBlock>
                         </div>
                         :
-                        <div className="col-6 flex_box_center">No Movie Selected</div>
+                        <div className={`${right_panel_hide}`.trim()}><div className="flex_box_center">No Movie Selected</div></div>
                 }
             </div>
         </div>
