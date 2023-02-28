@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/etraveli_mohit/static/css/main.9dda62ce.css",
-    "main.js": "/etraveli_mohit/static/js/main.1040214b.js",
+    "main.css": "/etraveli_mohit/static/css/main.5247fb23.css",
+    "main.js": "/etraveli_mohit/static/js/main.1ba2548e.js",
     "index.html": "/etraveli_mohit/index.html",
-    "main.9dda62ce.css.map": "/etraveli_mohit/static/css/main.9dda62ce.css.map",
-    "main.1040214b.js.map": "/etraveli_mohit/static/js/main.1040214b.js.map"
+    "main.5247fb23.css.map": "/etraveli_mohit/static/css/main.5247fb23.css.map",
+    "main.1ba2548e.js.map": "/etraveli_mohit/static/js/main.1ba2548e.js.map"
   },
   "entrypoints": [
-    "static/css/main.9dda62ce.css",
-    "static/js/main.1040214b.js"
+    "static/css/main.5247fb23.css",
+    "static/js/main.1ba2548e.js"
   ]
 }
