@@ -20,7 +20,7 @@ function ListingContainer(props) {
     function renderLeftSidePanelHTML(){
         //console.log("fetchMovieInStages :::",fetchMovieInStages);
         if (fetchMovieInStages === 0) {
-            return <div className={`${left_panel_hide}`.trim()}><div className="flex_box_center">Fetching data from server....</div></div>
+            return <div className={`${left_panel_hide}`.trim()}><div data-testid="test_movie_loading_text" className="flex_box_center">Fetching data from server....</div></div>
         } else if (fetchMovieInStages === 2) {
             return <div className={`${left_panel_hide}`.trim()}><div className="flex_box_center">Unable to fetch data from server.</div></div>
         } else if (fetchMovieInStages === 1) {

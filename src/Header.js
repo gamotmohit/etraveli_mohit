@@ -16,7 +16,7 @@ function Header(props) {
                     :
                     <div className="d-flex p-2 input-group">
                         <div className="btn-group me-2">
-                            <button type="button" className="btn btn-secondary dropdown-toggle sort-button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" data-testid="test_movie_sort_button"  className="btn btn-secondary dropdown-toggle sort-button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Sort by...
                             </button>
                             <ul className="dropdown-menu sort-button-list">
@@ -27,7 +27,7 @@ function Header(props) {
                                 <li className="dropdown-item font-13 border-bootom-1 pt-2 pb-2 pointer" onClick={() => handleSortList('yearoldest')}>Year Oldest</li>
                             </ul>
                         </div>
-                        <input type="search" className="form-control rounded-2" placeholder="Search Here" aria-label="Search Here" onChange={handleChange} />
+                        <input type="search" data-testid="test_movie_search" className="form-control rounded-2" placeholder="Search Here" aria-label="Search Here" onChange={handleChange} />
                     </div>
                 }
 
